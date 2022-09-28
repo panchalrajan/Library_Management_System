@@ -1,4 +1,6 @@
 
+import classes.ConnectionProvider;
+import java.sql.*;
 import javax.swing.*;
 
 /*
@@ -29,33 +31,33 @@ public class Student_Fine extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        book_sku_label_ = new javax.swing.JLabel();
-        delete_book_button_ = new javax.swing.JButton();
+        student_rollNo_label_ = new javax.swing.JLabel();
+        fine_payNow_button_ = new javax.swing.JButton();
         back_button_ = new javax.swing.JButton();
         delete_book_label_ = new javax.swing.JLabel();
-        book_sku_field_ = new javax.swing.JTextField();
+        student_rollNo_field_ = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        book_quantity_label_ = new javax.swing.JLabel();
-        book_quantity_field_ = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        student_name_label_ = new javax.swing.JLabel();
+        student_name_field_ = new javax.swing.JTextField();
+        search_Student_field_ = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        total_fine_label_ = new javax.swing.JLabel();
+        fine_collected_label_ = new javax.swing.JLabel();
+        total_fine_field_ = new javax.swing.JTextField();
+        fine_collected_field_ = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        book_sku_label_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        book_sku_label_.setText("STUDENT ROLL NO. :");
+        student_rollNo_label_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        student_rollNo_label_.setText("STUDENT ROLL NO. :");
 
-        delete_book_button_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        delete_book_button_.setText("PAY NOW");
-        delete_book_button_.addActionListener(new java.awt.event.ActionListener() {
+        fine_payNow_button_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        fine_payNow_button_.setText("PAY NOW");
+        fine_payNow_button_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                delete_book_button_ActionPerformed(evt);
+                fine_payNow_button_ActionPerformed(evt);
             }
         });
 
@@ -71,7 +73,7 @@ public class Student_Fine extends javax.swing.JFrame {
         delete_book_label_.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         delete_book_label_.setText("STUDENT FINE");
 
-        book_sku_field_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        student_rollNo_field_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -86,26 +88,31 @@ public class Student_Fine extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        book_quantity_label_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        book_quantity_label_.setText("STUDENT NAME :");
+        student_name_label_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        student_name_label_.setText("STUDENT NAME :");
 
-        book_quantity_field_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        student_name_field_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("SEARCH");
+        search_Student_field_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        search_Student_field_.setText("SEARCH");
+        search_Student_field_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_Student_field_ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("TOP 5 STUDENTS WITH MAX FINE VALUE :");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("TOTAL FINE : ");
+        total_fine_label_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        total_fine_label_.setText("TOTAL FINE : ");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setText("FINE COLLECTED : ");
+        fine_collected_label_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        fine_collected_label_.setText("FINE COLLECTED : ");
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        total_fine_field_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        fine_collected_field_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,24 +129,24 @@ public class Student_Fine extends javax.swing.JFrame {
                         .addContainerGap(400, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(book_quantity_label_, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(book_sku_label_, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(delete_book_button_, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(fine_collected_label_, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(total_fine_label_, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(student_name_label_, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(student_rollNo_label_, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(fine_payNow_button_, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(book_sku_field_, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(student_rollNo_field_, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(50, 50, 50)
-                                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(book_quantity_field_, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(search_Student_field_, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(student_name_field_, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(back_button_))
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(total_fine_field_, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(fine_collected_field_, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -153,24 +160,24 @@ public class Student_Fine extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(book_sku_label_)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(book_sku_field_, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(student_rollNo_label_)
+                    .addComponent(search_Student_field_, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(student_rollNo_field_, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(book_quantity_label_)
-                    .addComponent(book_quantity_field_, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(student_name_label_)
+                    .addComponent(student_name_field_, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(total_fine_label_)
+                    .addComponent(total_fine_field_, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fine_collected_label_)
+                    .addComponent(fine_collected_field_, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(delete_book_button_)
+                    .addComponent(fine_payNow_button_)
                     .addComponent(back_button_))
                 .addContainerGap(385, Short.MAX_VALUE))
         );
@@ -178,19 +185,57 @@ public class Student_Fine extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void delete_book_button_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_book_button_ActionPerformed
+    private void fine_payNow_button_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fine_payNow_button_ActionPerformed
         //Add Book and show conformation
-        int yesOrNo = JOptionPane.showInternalConfirmDialog(null, "DO YOU REALLY WANT TO DELETE THIS BOOK", "DELETE BOOK", JOptionPane.YES_NO_OPTION);
-        if(yesOrNo==0) JOptionPane.showInternalConfirmDialog(null, "BOOK DATA DELETED SUCCESSFULLY", "DELETE BOOK",JOptionPane.PLAIN_MESSAGE);
-    
-    }//GEN-LAST:event_delete_book_button_ActionPerformed
+        if(found==0) 
+            JOptionPane.showInternalConfirmDialog(null, "PLEASE ENTER A VALID ROLL NO", "PAY NOW",JOptionPane.PLAIN_MESSAGE);
+        else {
+            String finePaid = fine_collected_field_.getText(); 
+            try{
+                Connection con = ConnectionProvider.getCon();
+                Statement st = con.createStatement();
+                st.executeUpdate("UPDATE students SET FINE = '"+totalFine+"'- '"+finePaid+"' where roll_no = '"+roll_no+"' ");
+                JOptionPane.showInternalConfirmDialog(null, "PAYMENT SUCCESSFUL", "PAY NOW", JOptionPane.PLAIN_MESSAGE);
+                setVisible(false);
+                new Student_Fine().setVisible(true);                
+            } catch(Exception err) {
+                JOptionPane.showInternalMessageDialog(null, err);
+            }
+        }
+    }//GEN-LAST:event_fine_payNow_button_ActionPerformed
 
     private void back_button_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_button_ActionPerformed
         // Open Admin Page
         setVisible(false);
-        new Admin_Home_Page().setVisible(true); 
+        new Student_Fine().setVisible(true); 
         
     }//GEN-LAST:event_back_button_ActionPerformed
+
+    int found;
+    String totalFine;
+    String roll_no = "";
+    private void search_Student_field_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_Student_field_ActionPerformed
+        // TODO add your handling code here:
+        roll_no  = student_rollNo_field_.getText();
+           try{
+            Connection con = ConnectionProvider.getCon();
+            Statement st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet res = st.executeQuery("Select * from students where roll_no='"+roll_no+"'");
+                if(!res.first()) {
+                JOptionPane.showInternalConfirmDialog(null, "STUDENT RECORD NOT FOUND ", "SEARCH STUDENT",JOptionPane.PLAIN_MESSAGE);
+                    setVisible(false);
+                    new Student_Fine().setVisible(true);
+                } else {
+                totalFine = res.getString("FINE");
+                student_name_field_.setText(res.getString("STUDENT_NAME"));
+                total_fine_field_.setText(res.getString("FINE"));
+                
+                found = 1;
+                }
+            } catch(Exception err) {
+            JOptionPane.showInternalMessageDialog(null, err);
+            }
+    }//GEN-LAST:event_search_Student_field_ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,20 +274,20 @@ public class Student_Fine extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back_button_;
-    private javax.swing.JTextField book_quantity_field_;
-    private javax.swing.JLabel book_quantity_label_;
-    private javax.swing.JTextField book_sku_field_;
-    private javax.swing.JLabel book_sku_label_;
-    private javax.swing.JButton delete_book_button_;
     private javax.swing.JLabel delete_book_label_;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField fine_collected_field_;
+    private javax.swing.JLabel fine_collected_label_;
+    private javax.swing.JButton fine_payNow_button_;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton search_Student_field_;
+    private javax.swing.JTextField student_name_field_;
+    private javax.swing.JLabel student_name_label_;
+    private javax.swing.JTextField student_rollNo_field_;
+    private javax.swing.JLabel student_rollNo_label_;
+    private javax.swing.JTextField total_fine_field_;
+    private javax.swing.JLabel total_fine_label_;
     // End of variables declaration//GEN-END:variables
 
 }

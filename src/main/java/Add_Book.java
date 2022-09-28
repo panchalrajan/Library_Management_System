@@ -243,10 +243,12 @@ public class Add_Book extends javax.swing.JFrame {
         }
         if(all_book_ids.length()==2) {          //Only 1 Book Added
            JOptionPane.showInternalConfirmDialog(null, "BOOK ADDED SUCCESSFULLY \nBOOK ID IS : " + all_book_ids, "BOOK ADDED",JOptionPane.PLAIN_MESSAGE);
-            new Add_Book().setVisible(true);        //Remove old text
+            setVisible(false);
+           new Add_Book().setVisible(true);        //Remove old text
         } else if(all_book_ids!="") {          //More than 1 book added
            JOptionPane.showInternalConfirmDialog(null, "BOOKS ADDED SUCCESSFULLY \nBOOK IDs ARE : " + all_book_ids, "BOOKS ADDED",JOptionPane.PLAIN_MESSAGE);
-            new Add_Book().setVisible(true);        //Remove old text 
+           setVisible(false); 
+           new Add_Book().setVisible(true);        //Remove old text 
         } else {
             JOptionPane.showInternalMessageDialog(null, "PLEASE CHECK INPUT FIELDS");
         }

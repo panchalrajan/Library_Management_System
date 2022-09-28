@@ -37,11 +37,11 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="book_quantity_label_" alignment="0" pref="150" max="32767" attributes="0"/>
-                          <Component id="book_sku_label_" alignment="0" pref="150" max="32767" attributes="0"/>
-                          <Component id="delete_book_button_" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="fine_collected_label_" alignment="0" max="32767" attributes="0"/>
+                          <Component id="total_fine_label_" alignment="0" max="32767" attributes="0"/>
+                          <Component id="student_name_label_" alignment="0" pref="150" max="32767" attributes="0"/>
+                          <Component id="student_rollNo_label_" alignment="0" pref="150" max="32767" attributes="0"/>
+                          <Component id="fine_payNow_button_" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -49,17 +49,17 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="book_sku_field_" min="-2" pref="250" max="-2" attributes="0"/>
+                                          <Component id="student_rollNo_field_" min="-2" pref="250" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                          <Component id="jButton1" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="search_Student_field_" min="-2" pref="100" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="book_quantity_field_" min="-2" pref="400" max="-2" attributes="0"/>
+                                      <Component id="student_name_field_" min="-2" pref="400" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="back_button_" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jTextField1" alignment="1" min="-2" pref="400" max="-2" attributes="0"/>
+                              <Component id="total_fine_field_" alignment="1" min="-2" pref="400" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jTextField2" alignment="1" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="fine_collected_field_" alignment="1" min="-2" pref="400" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -78,28 +78,28 @@
               <Component id="jScrollPane1" min="-2" pref="116" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="book_sku_label_" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                  <Component id="book_sku_field_" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="student_rollNo_label_" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="search_Student_field_" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="student_rollNo_field_" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="book_quantity_label_" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="book_quantity_field_" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="student_name_label_" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="student_name_field_" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="total_fine_label_" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="total_fine_field_" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fine_collected_label_" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fine_collected_field_" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="delete_book_button_" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fine_payNow_button_" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="back_button_" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="385" max="32767" attributes="0"/>
@@ -108,7 +108,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="book_sku_label_">
+    <Component class="javax.swing.JLabel" name="student_rollNo_label_">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -116,7 +116,7 @@
         <Property name="text" type="java.lang.String" value="STUDENT ROLL NO. :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="delete_book_button_">
+    <Component class="javax.swing.JButton" name="fine_payNow_button_">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -124,7 +124,7 @@
         <Property name="text" type="java.lang.String" value="PAY NOW"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delete_book_button_ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fine_payNow_button_ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="back_button_">
@@ -147,7 +147,7 @@
         <Property name="text" type="java.lang.String" value="STUDENT FINE"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="book_sku_field_">
+    <Component class="javax.swing.JTextField" name="student_rollNo_field_">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -175,7 +175,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="book_quantity_label_">
+    <Component class="javax.swing.JLabel" name="student_name_label_">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -183,20 +183,23 @@
         <Property name="text" type="java.lang.String" value="STUDENT NAME :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="book_quantity_field_">
+    <Component class="javax.swing.JTextField" name="student_name_field_">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="search_Student_field_">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="SEARCH"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="search_Student_field_ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -206,7 +209,7 @@
         <Property name="text" type="java.lang.String" value="TOP 5 STUDENTS WITH MAX FINE VALUE :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="total_fine_label_">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -214,7 +217,7 @@
         <Property name="text" type="java.lang.String" value="TOTAL FINE : "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="fine_collected_label_">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -222,14 +225,14 @@
         <Property name="text" type="java.lang.String" value="FINE COLLECTED : "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="total_fine_field_">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="fine_collected_field_">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
